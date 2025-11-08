@@ -1,49 +1,47 @@
 <script setup lang="ts">
 const props = defineProps({
   type: String,
-  id : Number,
   trafficLightColor: String || null,
+  id: Number
 })
 
-const whatBackground = computed(()=>{
-  let  background
-  if(props.type === 'building'){
-    background = 'background-building'
-  } else if(props.type === 'road'){
-    background = 'background-road'
-  } else {
+console.log("props: ", props.type)
 
-    background = 'background-traffic-light-'+ `${props.trafficLightColor}`
-    console.log(background)
-  }
-  return background
-})
+const typeClass = props.trafficLightColor ? `tile--${props.type}-${props.trafficLightColor}` : `tile--${props.type}`
+
+console.log(typeClass);
+
 </script>
 
 <template>
-    <div :class="['tile',whatBackground]">
-      {{props.type}}
-    </div>
+  <div :class="typeClass" class="tile">
+    {{ props.type }}
+  </div>
 </template>
 
 <style scoped>
-.background-building {
-  background: #808080;
+.tile--building {
+  background-color: #b0bec5;
 }
-.background-road {
-  background: #000000;
+
+.tile--road {
+  background-color: black;
 }
-.background-traffic-light-red {
-  background: red;
+
+.tile--traffic-light-red {
+  background-color: red;
 }
-.background-traffic-light-warning {
-  background: orange;
+
+.tile--traffic-light-green {
+  background-color: green;
 }
-.background-traffic-light-green {
-  background: green;
+
+.tile--traffic-light-orange {
+  background-color: orange;
 }
+
 .tile {
   width: 20vw;
-  height: 15.625vh;
+  height: 20vh;
 }
 </style>

@@ -31,7 +31,7 @@ const data = {
     },
     card2 : {
       id : 7,
-      type: 'traffic light',
+      type: 'traffic-light',
       trafficLightColor : 'red'
     },
     card3: {
@@ -40,7 +40,7 @@ const data = {
     },
     card4: {
       id : 9,
-      type : 'traffic light',
+      type : 'traffic-light',
       trafficLightColor:'green'
     },
     card5: {
@@ -77,7 +77,7 @@ const data = {
     },
     card2 : {
       id : 17,
-      type: 'traffic light',
+      type: 'traffic-light',
       trafficLightColor:'green'
     },
     card3: {
@@ -86,7 +86,7 @@ const data = {
     },
     card4: {
       id : 19,
-      type : 'traffic light',
+      type : 'traffic-light',
       trafficLightColor:'red'
     },
     card5: {
