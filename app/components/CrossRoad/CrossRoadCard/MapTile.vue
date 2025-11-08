@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const props = defineProps({
   type: String,
+  id : Number,
+  trafficLightColor: String || null,
 })
 
 const whatBackground = computed(()=>{
@@ -10,7 +12,9 @@ const whatBackground = computed(()=>{
   } else if(props.type === 'road'){
     background = 'background-road'
   } else {
-    background = 'background-traffic-light'
+
+    background = 'background-traffic-light-'+ `${props.trafficLightColor}`
+    console.log(background)
   }
   return background
 })
@@ -29,8 +33,14 @@ const whatBackground = computed(()=>{
 .background-road {
   background: #000000;
 }
-.background-traffic-light {
+.background-traffic-light-red {
   background: red;
+}
+.background-traffic-light-warning {
+  background: orange;
+}
+.background-traffic-light-green {
+  background: green;
 }
 .tile {
   width: 20vw;
