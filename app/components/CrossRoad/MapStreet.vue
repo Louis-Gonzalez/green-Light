@@ -1,12 +1,17 @@
 <script setup lang="ts">
+import MapTile from "~/components/CrossRoad/CrossRoadCard/MapTile.vue";
 
+const building = {
+  type: "traffic",
+}
 </script>
 
 <template>
   <div class="container-map-street">
     <div>
-      <p>test border</p>
-      <slot></slot>
+      <MapTile
+          :type="building.type"
+      />
     </div>
   </div>
 </template>
