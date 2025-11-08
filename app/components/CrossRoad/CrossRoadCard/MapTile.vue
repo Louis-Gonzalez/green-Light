@@ -17,7 +17,7 @@ const whatBackground = computed(()=>{
 </script>
 
 <template>
-    <div :class="whatBackground">
+    <div :class="['tile',whatBackground]">
       {{props.type}}
     </div>
 </template>
@@ -31,5 +31,9 @@ const whatBackground = computed(()=>{
 }
 .background-traffic-light {
   background: red;
+}
+.tile {
+  width: 20vw;
+  height: 15.625vh;
 }
 </style>
