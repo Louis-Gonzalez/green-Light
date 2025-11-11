@@ -10,7 +10,3 @@ import Navbar from "~/components/Navbar.vue";
     </NuxtLayout>
   </div>
 </template>
-
-<style>
-
-</style>
