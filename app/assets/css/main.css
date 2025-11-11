@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #638bc5;
+    --tertiary-color: #e6ff00;
+    --success-color: green;
+    --warning-color: orange;
+    --error-color: red;
+    --text-color: black;
+    --background-color: #f0f0f0;
+}
+
+/* 🌙 Thème sombre : basé sur data-theme */
+[data-theme="dark"] {
+    --primary-color: #1e293b;
+    --secondary-color: #0f172a;
+    --tertiary-color: #ffdd57;
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
+    --text-color: #f8fafc;
+    --background-color: #0f172a;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background: var(--background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
