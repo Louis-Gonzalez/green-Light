@@ -47,8 +47,11 @@ const routeList = [
   color: whitesmoke;
   font-size: large;
 }
-.active-link {
-  font-weight: bold;
+
+.navbar a.active-link {
   color: orangered;
+  font-weight: bold;
+  font-size: large;
+  text-decoration: none;
 }
 </style>
