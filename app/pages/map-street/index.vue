@@ -1,10 +1,9 @@
 <script setup lang="ts">
- import Navbar from "~/components/Navbar.vue";
+
 </script>
 
 <template>
-  <h1>Home Page</h1>
-  <Navbar />
+<h1>Map street</h1>
 </template>
 
 <style scoped>
