@@ -1,4 +1,3 @@
-/* 🎨 Thème clair (par défaut) */
 :root {
     --primary-color: #007bff;
     --secondary-color: #638bc5;
@@ -10,7 +9,6 @@
     --background-color: var(--secondary-color);
 }
 
-/* 🌙 Thème sombre */
 :root[data-theme='dark'] {
     --primary-color: #3b82f6;
     --secondary-color: #1e293b;
