@@ -6,7 +6,7 @@ const routeList = [
   },
   {
     name: 'Map Street',
-    path: '/map-street/index',
+    path: '/map-street',
   },
 ];
 </script>
@@ -15,13 +15,19 @@ const routeList = [
   <nav class="navbar">
     <div class="nav-links">
       <div v-for="route in routeList" :key="route.path">
-        <NuxtLink :to="route.path">{{ route.name }}</NuxtLink>
+        <NuxtLink
+            :to="route.path"
+            exact-active-class="active-link"
+        >
+          {{ route.name }}
+        </NuxtLink>
+
       </div>
     </div>
   </nav>
 </template>
 
-<style scoped>
+<style>
 .navbar {
   display: flex;
   align-items: center;
@@ -40,5 +46,9 @@ const routeList = [
   text-decoration: none;
   color: whitesmoke;
   font-size: large;
+}
+.active-link {
+  font-weight: bold;
+  color: orangered;
 }
 </style>
