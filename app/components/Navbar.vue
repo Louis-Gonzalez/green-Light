@@ -1,4 +1,10 @@
 <script setup lang="ts">
+import { useTheme } from '~/composables/useTheme';
+import { onMounted } from "vue";
+
+const { theme, toggleTheme, initTheme } = useTheme();
+onMounted(() => initTheme());
+
 const routeList = [
   {
     name: 'Home',
@@ -21,9 +27,11 @@ const routeList = [
         >
           {{ route.name }}
         </NuxtLink>
-
       </div>
     </div>
+    <button class="theme-toggle" @click="toggleTheme">
+      {{ theme === 'dark' ? '🌞 Light' : '🌙 Dark' }}
+    </button>
   </nav>
 </template>
 
