@@ -10,7 +10,7 @@ Follow these simple steps to integrate it cleanly into your **Nuxt 3** app.
 1. Inside your `/app` folder, create a new folder named **`plugins`**
 2. Inside that folder, create a file named **`vuetify.ts`**
 
-Then, copy and paste the following code:
+Then, copy and paste the following code: (change the color do you need)
 
 ```ts
 // app/plugins/vuetify.ts
