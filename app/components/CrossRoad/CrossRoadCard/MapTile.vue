@@ -7,7 +7,10 @@ const props = defineProps({
 
 console.log("props: ", props.type)
 
-const typeClass = props.trafficLightColor ? `tile--${props.type}-${props.trafficLightColor}` : `tile--${props.type}`
+const typeClass = computed(()=>{
+  return props.trafficLightColor ? `tile--${props.type}-${props.trafficLightColor}` : `tile--${props.type}`
+})
+// const typeClass = props.trafficLightColor ? `tile--${props.type}-${props.trafficLightColor}` : `tile--${props.type}`
 
 console.log(typeClass);
 

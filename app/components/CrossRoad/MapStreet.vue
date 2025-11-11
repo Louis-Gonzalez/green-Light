@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { reactive, onMounted } from "vue";
 import MapTile from "~/components/CrossRoad/CrossRoadCard/MapTile.vue";
 
-const data = {
+const data = reactive({
   firstLine : {
     card1 : {
       id : 1,
@@ -116,7 +117,50 @@ const data = {
       type : 'building'
     }
   }
-}
+})
+
+const changeTrafficLight = (light: any) => {
+  switch (light.trafficLightColor) {
+    case 'red':
+      light.trafficLightColor = 'green';
+      break;
+    case 'green':
+      light.trafficLightColor = 'orange';
+      break;
+    case 'orange':
+      light.trafficLightColor = 'red';
+      break;
+  }
+};
+
+const changingColor = () => {
+  // Feux synchronisés : 7 et 19
+  const light7 = data.secondLine.card2;
+  const light19 = data.fourthLine.card4;
+  // Feux synchronisés : 9 et 17
+  const light9 = data.secondLine.card4;
+  const light17 = data.fourthLine.card2;
+
+  // Avance la couleur des feux 7 et 19
+  changeTrafficLight(light7);
+  light19.trafficLightColor = light7.trafficLightColor;
+
+  // Avance la couleur des feux 9 et 17 (opposé à 7/19)
+  if (light7.trafficLightColor === 'red') {
+    light9.trafficLightColor = 'green';
+    light17.trafficLightColor = 'green';
+  } else if (light7.trafficLightColor === 'green') {
+    light9.trafficLightColor = 'orange';
+    light17.trafficLightColor = 'orange';
+  } else { // orange
+    light9.trafficLightColor = 'red';
+    light17.trafficLightColor = 'red';
+  }
+};
+
+onMounted(() => {
+  setInterval(changingColor, 3000);
+});
 </script>
 
 <template>
