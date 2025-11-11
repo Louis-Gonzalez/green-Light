@@ -1,0 +1,17 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #638bc5;
+    --tertiary-color: #e6ff00;
+    --success-color: green;
+    --warning-color: orange;
+    --error-color: red;
+    --text-color: black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background: var(--secondary-color);
+}
+
