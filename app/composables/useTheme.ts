@@ -1,3 +1,5 @@
+import { useState } from "#app";
+
 export function useTheme() {
     const theme = useState<'light' | 'dark'>('theme', () => 'light');
 
