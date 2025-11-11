@@ -41,7 +41,7 @@ const routeList = [
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
-  background-color: green;
+  background-color: var(--success-color);
 }
 
 .nav-links {
